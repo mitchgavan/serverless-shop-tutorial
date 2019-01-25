@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40px;
@@ -27,7 +23,7 @@
 }
 
 .App-products {
-  margin: 1rem auto;
+  margin: 3rem auto 3.5rem;
   max-width: 800px;
   text-align: center;
 }
