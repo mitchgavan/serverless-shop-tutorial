@@ -1,0 +1,20 @@
+.CartItem {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  text-align: left;
+}
+
+.CartItem-details {
+  display: flex;
+  width: 180px;
+}
+
+.CartItem-details div {
+  flex: 1 1 50%;
+}
+
+.CartItem-quantity {
+  padding: 0 1rem;
+}
