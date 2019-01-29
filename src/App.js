@@ -1,11 +1,38 @@
 import React, { Component } from 'react';
 import items from './api/items';
 import Product from './components/Product/Product';
+import Cart from './components/Cart/Cart';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  state = {
+    itemsInCart: [],
+  };
+
+  handleAddToCartClick = id => {
+    this.setState(state => {
+      const itemInCart = state.itemsInCart.find(item => item.id === id);
+
+      // if item is already in cart, update the quantity
+      if (itemInCart) {
+        return {
+          itemsInCart: state.itemsInCart.map(item => {
+            if (item.id !== id) return item;
+            return { ...itemInCart, quantity: item.quantity + 1 };
+          }),
+        };
+      }
+
+      // otherwise, add new item to cart
+      const item = items.find(item => item.id === id);
+      return { itemsInCart: [...state.itemsInCart, { ...item, quantity: 1 }] };
+    });
+  };
+
   render() {
+    const { itemsInCart } = this.state;
+
     return (
       <div className="App">
         <header className="App-header">
@@ -15,9 +42,15 @@ class App extends Component {
         <main className="App-shop">
           <div className="App-products">
             {items.map(item => (
-              <Product title={item.title} price={item.price} />
+              <Product
+                key={item.title}
+                title={item.title}
+                price={item.price}
+                onAddToCartClick={() => this.handleAddToCartClick(item.id)}
+              />
             ))}
           </div>
+          <Cart itemsInCart={itemsInCart} />
         </main>
       </div>
     );
