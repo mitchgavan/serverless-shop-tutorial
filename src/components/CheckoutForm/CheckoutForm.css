@@ -1,0 +1,44 @@
+.CheckoutForm {
+  border-top: 1px solid #eee;
+  margin: 0 auto;
+  max-width: 800px;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.CheckoutForm-button {
+  display: inline-block;
+  margin: 0 0 1rem 0;
+  padding: 0.85em 1em;
+  border: 0;
+  outline: 0;
+  border-radius: 100em;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  background-color: #7fdc45;
+  color: #fff;
+  cursor: pointer;
+  transition-property: background-color, color;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-out;
+  -webkit-appearance: none;
+}
+
+.CheckoutForm-button:hover,
+.CheckoutForm-button:focus {
+  background-color: #68b637;
+}
+
+.StripeElement {
+  display: block;
+  margin: 0.5rem auto 1.5rem;
+  max-width: 500px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  outline: 0;
+  background: white;
+}
