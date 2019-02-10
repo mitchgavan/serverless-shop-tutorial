@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Elements, StripeProvider } from 'react-stripe-elements';
 import items from './api/items';
 import Product from './components/Product/Product';
 import Cart from './components/Cart/Cart';
+import CheckoutForm from './components/CheckoutForm/CheckoutForm';
 import logo from './logo.svg';
 import './App.css';
 
@@ -51,6 +53,13 @@ class App extends Component {
             ))}
           </div>
           <Cart itemsInCart={itemsInCart} />
+          {itemsInCart.length > 0 && (
+            <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
+              <Elements>
+                <CheckoutForm />
+              </Elements>
+            </StripeProvider>
+          )}
         </main>
       </div>
     );
