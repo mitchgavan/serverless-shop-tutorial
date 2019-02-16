@@ -31,6 +31,10 @@
   background-color: #68b637;
 }
 
+.CheckoutForm-error {
+  color: #dc4545;
+}
+
 .StripeElement {
   display: block;
   margin: 0.5rem auto 1.5rem;
