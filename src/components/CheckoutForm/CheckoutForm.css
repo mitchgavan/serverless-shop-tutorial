@@ -6,6 +6,12 @@
   text-align: center;
 }
 
+.CheckoutForm-complete {
+  color: #7fdc45;
+  font-weight: 700;
+  text-align: center;
+}
+
 .CheckoutForm-button {
   display: inline-block;
   margin: 0 0 1rem 0;
@@ -29,6 +35,10 @@
 .CheckoutForm-button:hover,
 .CheckoutForm-button:focus {
   background-color: #68b637;
+}
+
+.CheckoutForm-button:disabled {
+  background-color: #ccc;
 }
 
 .CheckoutForm-error {
