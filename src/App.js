@@ -47,7 +47,7 @@ export default function App() {
         </div>
         <Cart itemsInCart={itemsInCart} />
         {itemsInCart.length > 0 && (
-          <StripeProvider apiKey="pk_test_TbaT0lpvmSdTKqV2LOsRk4vG">
+          <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
             <Elements>
               <CheckoutForm />
             </Elements>
