@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CardElement, injectStripe } from 'react-stripe-elements';
 import './CheckoutForm.css';
 
-function CheckoutForm({ stripe }) {
+function CheckoutForm({ stripe, totalCost }) {
   const [status, setStatus] = useState('default');
 
   const submit = async e => {
@@ -16,7 +16,7 @@ function CheckoutForm({ stripe }) {
       let response = await fetch('/.netlify/functions/charge', {
         method: 'POST',
         body: JSON.stringify({
-          amount: 100,
+          amount: totalCost * 100,
           token: token.id,
         }),
       });

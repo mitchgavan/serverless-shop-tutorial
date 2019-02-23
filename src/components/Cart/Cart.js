@@ -2,7 +2,7 @@ import React from 'react';
 import CartItem from './CartItem/CartItem';
 import './Cart.css';
 
-export default function Cart({ itemsInCart }) {
+export default function Cart({ itemsInCart, totalCost }) {
   return (
     <div className="Cart">
       <h2 className="Cart-title">Your shopping cart</h2>
@@ -17,10 +17,7 @@ export default function Cart({ itemsInCart }) {
             />
           ))}
           <div className="Cart-total-cost">
-            Total cost: $
-            {itemsInCart
-              .reduce((acc, item) => acc + item.price * item.quantity, 0)
-              .toFixed(2)}
+            Total cost: ${totalCost.toFixed(2)}
           </div>
         </div>
       ) : (

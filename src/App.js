@@ -28,6 +28,11 @@ export default function App() {
     });
   };
 
+  const totalCost = itemsInCart.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
+
   return (
     <div className="App">
       <header className="App-header">
@@ -45,11 +50,11 @@ export default function App() {
             />
           ))}
         </div>
-        <Cart itemsInCart={itemsInCart} />
+        <Cart itemsInCart={itemsInCart} totalCost={totalCost} />
         {itemsInCart.length > 0 && (
           <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
             <Elements>
-              <CheckoutForm />
+              <CheckoutForm totalCost={totalCost} />
             </Elements>
           </StripeProvider>
         )}
