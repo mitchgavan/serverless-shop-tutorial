@@ -1,6 +1,6 @@
 # Serverless Shop Tutorial
 
-[View demo](https://vigilant-torvalds-79378e.netlify.com/)
+[View demo](https://serverless-shop-demo.netlify.com/)
 
 There's also an accompanying [tutorial blog post](https://mitchgavan.com/react-serverless-shop/).
 
