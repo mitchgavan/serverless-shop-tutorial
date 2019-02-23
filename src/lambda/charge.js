@@ -1,4 +1,5 @@
-const stripe = require('stripe')('sk_test_yaKbjP7rkSGdMeQtQvTMx4cG');
+require('dotenv').config();
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 exports.handler = (event, context, callback) => {
   // This will allow us to freeze open connections to a database
